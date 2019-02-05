@@ -8,13 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		D3A08451220A093600100946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08450220A093600100946 /* AppDelegate.swift */; };
-		D3A08453220A093600100946 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08452220A093600100946 /* FirstViewController.swift */; };
-		D3A08455220A093600100946 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08454220A093600100946 /* SecondViewController.swift */; };
+		D3A08453220A093600100946 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08452220A093600100946 /* WebViewController.swift */; };
+		D3A08455220A093600100946 /* SeoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08454220A093600100946 /* SeoViewController.swift */; };
 		D3A08458220A093600100946 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A08456220A093600100946 /* Main.storyboard */; };
 		D3A0845A220A093700100946 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D3A08459220A093700100946 /* Assets.xcassets */; };
 		D3A0845D220A093700100946 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D3A0845B220A093700100946 /* LaunchScreen.storyboard */; };
 		D3A08468220A093700100946 /* SC_client_listTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08467220A093700100946 /* SC_client_listTests.swift */; };
 		D3A08473220A093700100946 /* SC_client_listUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08472220A093700100946 /* SC_client_listUITests.swift */; };
+		D3A08481220A12B000100946 /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08480220A12B000100946 /* AddClientViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,8 +38,8 @@
 /* Begin PBXFileReference section */
 		D3A0844D220A093600100946 /* SC-client-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SC-client-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A08450220A093600100946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D3A08452220A093600100946 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		D3A08454220A093600100946 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		D3A08452220A093600100946 /* WebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
+		D3A08454220A093600100946 /* SeoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeoViewController.swift; sourceTree = "<group>"; };
 		D3A08457220A093600100946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D3A08459220A093700100946 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D3A0845C220A093700100946 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -49,6 +50,7 @@
 		D3A0846E220A093700100946 /* SC-client-listUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "SC-client-listUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A08472220A093700100946 /* SC_client_listUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SC_client_listUITests.swift; sourceTree = "<group>"; };
 		D3A08474220A093700100946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D3A08480220A12B000100946 /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,8 +102,9 @@
 			isa = PBXGroup;
 			children = (
 				D3A08450220A093600100946 /* AppDelegate.swift */,
-				D3A08452220A093600100946 /* FirstViewController.swift */,
-				D3A08454220A093600100946 /* SecondViewController.swift */,
+				D3A08452220A093600100946 /* WebViewController.swift */,
+				D3A08454220A093600100946 /* SeoViewController.swift */,
+				D3A08480220A12B000100946 /* AddClientViewController.swift */,
 				D3A08456220A093600100946 /* Main.storyboard */,
 				D3A08459220A093700100946 /* Assets.xcassets */,
 				D3A0845B220A093700100946 /* LaunchScreen.storyboard */,
@@ -259,9 +262,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D3A08455220A093600100946 /* SecondViewController.swift in Sources */,
+				D3A08455220A093600100946 /* SeoViewController.swift in Sources */,
 				D3A08451220A093600100946 /* AppDelegate.swift in Sources */,
-				D3A08453220A093600100946 /* FirstViewController.swift in Sources */,
+				D3A08453220A093600100946 /* WebViewController.swift in Sources */,
+				D3A08481220A12B000100946 /* AddClientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
