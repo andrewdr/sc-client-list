@@ -10,6 +10,10 @@ import UIKit
 
 class WebTableCell: UITableViewCell{
     
+    @IBOutlet weak var clientImage: UIImageView!
+    @IBOutlet weak var clientName: UILabel!
+    @IBOutlet weak var companyName: UILabel!
+    
 }
 
 class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,7 +27,17 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let webClientCell = tableView.dequeueReusableCell(withIdentifier: "webClientCell", for: indexPath)
+            as! WebTableCell
+        
+        webClientCell.clientImage.image = UIImage(named: "blank-avatar.png")
+        webClientCell.clientName.text = "Andrew Draper"
+        webClientCell.companyName.text = "ABC Company"
+        
+        
+        return webClientCell
+        
     }
     
 
