@@ -16,6 +16,7 @@
 		D3A08468220A093700100946 /* SC_client_listTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08467220A093700100946 /* SC_client_listTests.swift */; };
 		D3A08473220A093700100946 /* SC_client_listUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08472220A093700100946 /* SC_client_listUITests.swift */; };
 		D3A08481220A12B000100946 /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08480220A12B000100946 /* AddClientViewController.swift */; };
+		D3A08483220B67E600100946 /* ClientModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08482220B67E600100946 /* ClientModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		D3A08472220A093700100946 /* SC_client_listUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SC_client_listUITests.swift; sourceTree = "<group>"; };
 		D3A08474220A093700100946 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D3A08480220A12B000100946 /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
+		D3A08482220B67E600100946 /* ClientModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +108,7 @@
 				D3A08454220A093600100946 /* SeoViewController.swift */,
 				D3A08480220A12B000100946 /* AddClientViewController.swift */,
 				D3A08456220A093600100946 /* Main.storyboard */,
+				D3A08482220B67E600100946 /* ClientModel.swift */,
 				D3A08459220A093700100946 /* Assets.xcassets */,
 				D3A0845B220A093700100946 /* LaunchScreen.storyboard */,
 				D3A0845E220A093700100946 /* Info.plist */,
@@ -264,6 +267,7 @@
 			files = (
 				D3A08455220A093600100946 /* SeoViewController.swift in Sources */,
 				D3A08451220A093600100946 /* AppDelegate.swift in Sources */,
+				D3A08483220B67E600100946 /* ClientModel.swift in Sources */,
 				D3A08453220A093600100946 /* WebViewController.swift in Sources */,
 				D3A08481220A12B000100946 /* AddClientViewController.swift in Sources */,
 			);
