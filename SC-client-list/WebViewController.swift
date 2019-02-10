@@ -10,20 +10,41 @@ import UIKit
 
 class WebTableCell: UITableViewCell{
     
+    @IBOutlet weak var clientImage: UIImageView!
+    @IBOutlet weak var clientName: UILabel!
+    @IBOutlet weak var companyName: UILabel!
+    
 }
 
 class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var webClientTable: UITableView!
     
+    var clients = Client()
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let webClientCell = tableView.dequeueReusableCell(withIdentifier: "webClientCell", for: indexPath)
+            as! WebTableCell
+        
+//        let client: Client
+        
+//        let client = clients
+        let viewModel = ClientViewModel(client: clients)
+        
+        webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
+        webClientCell.companyName.text = viewModel.companyName
+        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
+
+        
+        return webClientCell
+        
     }
     
 
