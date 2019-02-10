@@ -20,6 +20,8 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var webClientTable: UITableView!
     
+    var clients = Client()
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
@@ -31,10 +33,15 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let webClientCell = tableView.dequeueReusableCell(withIdentifier: "webClientCell", for: indexPath)
             as! WebTableCell
         
-        webClientCell.clientImage.image = UIImage(named: "blank-avatar.png")
-        webClientCell.clientName.text = "Andrew Draper"
-        webClientCell.companyName.text = "ABC Company"
+//        let client: Client
         
+//        let client = clients
+        let viewModel = ClientViewModel(client: clients)
+        
+        webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
+        webClientCell.companyName.text = viewModel.companyName
+        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
+
         
         return webClientCell
         

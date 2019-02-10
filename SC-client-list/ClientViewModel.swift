@@ -13,7 +13,7 @@ struct ClientViewModel{
     let clientType: String
     let firstName: String
     let lastName: String
-    let clientImageURL: URL
+    let clientImage: String
     
     let companyName: String
     let companyDesc: String
@@ -26,11 +26,11 @@ struct ClientViewModel{
     init(client:Client){
         
         clientType = client.clientType ?? "_"
-        firstName = client.firstName ?? "_"
-        lastName = client.lastName ?? "_"
-        clientImageURL = client.clientImageURL ?? URL(string: "blank-avatar.png")!
-        companyName = client.companyName ?? "_"
-        companyDesc = client.companyDesc ?? "_"
+        firstName = client.firstName ?? "Andy"
+        lastName = client.lastName ?? "Draper"
+        clientImage = client.clientImage ?? "blank-avatar.png"
+        companyName = client.companyName ?? "ABC Company"
+        companyDesc = client.companyDesc ?? "We Do Some Shit"
         
         officePhone = client.officePhone ?? 555-555-5555
         cellPhone = client.cellPhone ?? 555-555-5555

@@ -14,7 +14,7 @@ struct Client {
     let clientType: String?
     let firstName: String?
     let lastName: String?
-    let clientImageURL: URL?
+    let clientImage: String?
     
     let companyName: String?
     let companyDesc: String?
@@ -24,12 +24,12 @@ struct Client {
     let email: URL?
     let website: URL?
     
-    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImageURL: URL? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: Int? = nil, cellPhone: Int? = nil, email: URL? = nil, website: URL? = nil ){
+    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImage: String? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: Int? = nil, cellPhone: Int? = nil, email: URL? = nil, website: URL? = nil ){
         
         self.clientType = clientType
         self.firstName = firstName
         self.lastName = lastName
-        self.clientImageURL = clientImageURL
+        self.clientImage = clientImage
         
         self.companyName = companyName
         self.companyDesc = companyDesc
