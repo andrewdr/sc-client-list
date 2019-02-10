@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D33DB123220FACA3002D8898 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33DB122220FACA3002D8898 /* ClientViewModel.swift */; };
 		D39282E7220D44FF00A7D83F /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39282E6220D44FF00A7D83F /* AddClientViewController.swift */; };
 		D3A08451220A093600100946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08450220A093600100946 /* AppDelegate.swift */; };
 		D3A08453220A093600100946 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08452220A093600100946 /* WebViewController.swift */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D33DB122220FACA3002D8898 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		D39282E6220D44FF00A7D83F /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		D3A0844D220A093600100946 /* SC-client-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SC-client-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D3A08450220A093600100946 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				D3A08454220A093600100946 /* SeoViewController.swift */,
 				D3A08456220A093600100946 /* Main.storyboard */,
 				D3A08482220B67E600100946 /* ClientModel.swift */,
+				D33DB122220FACA3002D8898 /* ClientViewModel.swift */,
 				D3A08459220A093700100946 /* Assets.xcassets */,
 				D3A0845B220A093700100946 /* LaunchScreen.storyboard */,
 				D3A0845E220A093700100946 /* Info.plist */,
@@ -266,6 +269,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D3A08455220A093600100946 /* SeoViewController.swift in Sources */,
+				D33DB123220FACA3002D8898 /* ClientViewModel.swift in Sources */,
 				D3A08451220A093600100946 /* AppDelegate.swift in Sources */,
 				D3A08483220B67E600100946 /* ClientModel.swift in Sources */,
 				D39282E7220D44FF00A7D83F /* AddClientViewController.swift in Sources */,
