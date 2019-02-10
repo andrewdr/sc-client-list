@@ -1,0 +1,6 @@
+framework module Pods_SC_client_listUITests {
+  umbrella header "Pods-SC-client-listUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}
