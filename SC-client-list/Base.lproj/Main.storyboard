@@ -256,6 +256,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addClientTable" destination="SIZ-U1-kYL" id="9VG-zS-zfk"/>
+                        <outlet property="clientPhoto" destination="B1J-3W-dy0" id="PsS-RG-iLE"/>
+                        <outlet property="firstName" destination="I4Q-8y-HPd" id="TmX-Pn-vKz"/>
+                        <outlet property="lastName" destination="e7O-mI-CHe" id="T8v-jc-V51"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USc-Ed-ClU" userLabel="First Responder" sceneMemberID="firstResponder"/>

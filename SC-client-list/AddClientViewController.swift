@@ -7,18 +7,45 @@
 //
 
 import UIKit
+import AWSAppSync
 
 class AddClientViewController: UITableViewController {
 
     @IBOutlet var addClientTable: UITableView!
     
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var clientPhoto: UIImageView!
+    
+      var appSyncClient: AWSAppSyncClient?
+    
+    
+
+    
+    func runMutation(){
+        let mutationInput = CreateTodoInput(name: "John Doe", description:"John Doe's ABC Business")
+        appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+        
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-
          self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
