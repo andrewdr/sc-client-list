@@ -19,10 +19,17 @@ class AddClientViewController: UITableViewController {
     
       var appSyncClient: AWSAppSyncClient?
     
+
+    
     
 
     func runMutation(){
-        let mutationInput = CreateTodoInput(name: "John Doe", description:"John Doe's ABC Business")
+        
+//        let firstNameText = firstName.text!
+//        let lastNameText = lastName.text!
+        
+        
+        let mutationInput = CreateTodoInput(firstName: "Andrew", lastName: "Draper")
         appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -40,7 +47,7 @@ class AddClientViewController: UITableViewController {
                 print(error?.localizedDescription ?? "")
                 return
             }
-            result?.data?.listTodos?.items!.forEach { print(($0?.name)! + " " + ($0?.description)!) }
+            result?.data?.listTodos?.items!.forEach { print(($0?.firstName)! + " " + ($0?.lastName)!) }
         }
     }
     
@@ -61,11 +68,6 @@ class AddClientViewController: UITableViewController {
             print("DB Item with ID: \(deleteInput) was deleted.")
             
         }
-        
-        
-        
-        
-    
     }
     
     override func viewDidLoad() {
@@ -74,7 +76,7 @@ class AddClientViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-//        runMutation()
+        runMutation()
 //        runQuery()
 //        deleteEntry()
         
