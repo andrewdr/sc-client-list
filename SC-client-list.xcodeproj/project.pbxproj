@@ -10,6 +10,8 @@
 		2CE7166DB3FFC282A18A4936 /* Pods_SC_client_list.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 734BEE380271B7745896CADA /* Pods_SC_client_list.framework */; };
 		4285D6CAC17A4CEF57D378CB /* Pods_SC_client_listTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8CDA20ED5121E44332F2B209 /* Pods_SC_client_listTests.framework */; };
 		5789AD59F8F0277CC5B9A79A /* Pods_SC_client_listUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5866B10168E809A5E9DBD973 /* Pods_SC_client_listUITests.framework */; };
+		D3290303221764B300B36D7C /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32903012217648A00B36D7C /* API.swift */; };
+		D329030522176E9F00B36D7C /* awsconfiguration.json in Resources */ = {isa = PBXBuildFile; fileRef = D329030422176E9F00B36D7C /* awsconfiguration.json */; };
 		D33DB123220FACA3002D8898 /* ClientViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33DB122220FACA3002D8898 /* ClientViewModel.swift */; };
 		D39282E7220D44FF00A7D83F /* AddClientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39282E6220D44FF00A7D83F /* AddClientViewController.swift */; };
 		D3A08451220A093600100946 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A08450220A093600100946 /* AppDelegate.swift */; };
@@ -49,6 +51,8 @@
 		91BDBF67992CB0CDE37C9161 /* Pods-SC-client-listUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SC-client-listUITests.release.xcconfig"; path = "Target Support Files/Pods-SC-client-listUITests/Pods-SC-client-listUITests.release.xcconfig"; sourceTree = "<group>"; };
 		946AA6AA34E57EB04CE5C446 /* Pods-SC-client-list.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SC-client-list.release.xcconfig"; path = "Target Support Files/Pods-SC-client-list/Pods-SC-client-list.release.xcconfig"; sourceTree = "<group>"; };
 		A60EFDA5406D9015F4F70316 /* Pods-SC-client-list.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SC-client-list.debug.xcconfig"; path = "Target Support Files/Pods-SC-client-list/Pods-SC-client-list.debug.xcconfig"; sourceTree = "<group>"; };
+		D32903012217648A00B36D7C /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		D329030422176E9F00B36D7C /* awsconfiguration.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = awsconfiguration.json; sourceTree = "<group>"; };
 		D33DB122220FACA3002D8898 /* ClientViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClientViewModel.swift; sourceTree = "<group>"; };
 		D39282E6220D44FF00A7D83F /* AddClientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddClientViewController.swift; sourceTree = "<group>"; };
 		D3A0844D220A093600100946 /* SC-client-list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SC-client-list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +111,6 @@
 				F2C7D971A750602E6ACAE317 /* Pods-SC-client-listUITests.debug.xcconfig */,
 				91BDBF67992CB0CDE37C9161 /* Pods-SC-client-listUITests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -146,6 +149,7 @@
 		D3A0844F220A093600100946 /* SC-client-list */ = {
 			isa = PBXGroup;
 			children = (
+				D32903012217648A00B36D7C /* API.swift */,
 				D39282E6220D44FF00A7D83F /* AddClientViewController.swift */,
 				D3A08450220A093600100946 /* AppDelegate.swift */,
 				D3A08452220A093600100946 /* WebViewController.swift */,
@@ -153,6 +157,7 @@
 				D3A08456220A093600100946 /* Main.storyboard */,
 				D3A08482220B67E600100946 /* ClientModel.swift */,
 				D33DB122220FACA3002D8898 /* ClientViewModel.swift */,
+				D329030422176E9F00B36D7C /* awsconfiguration.json */,
 				D3A08459220A093700100946 /* Assets.xcassets */,
 				D3A0845B220A093700100946 /* LaunchScreen.storyboard */,
 				D3A0845E220A093700100946 /* Info.plist */,
@@ -286,6 +291,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D329030522176E9F00B36D7C /* awsconfiguration.json in Resources */,
 				D3A0845D220A093700100946 /* LaunchScreen.storyboard in Resources */,
 				D3A0845A220A093700100946 /* Assets.xcassets in Resources */,
 				D3A08458220A093600100946 /* Main.storyboard in Resources */,
@@ -416,6 +422,7 @@
 				D3A08483220B67E600100946 /* ClientModel.swift in Sources */,
 				D39282E7220D44FF00A7D83F /* AddClientViewController.swift in Sources */,
 				D3A08453220A093600100946 /* WebViewController.swift in Sources */,
+				D3290303221764B300B36D7C /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

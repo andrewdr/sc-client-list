@@ -21,7 +21,6 @@ class AddClientViewController: UITableViewController {
     
     
 
-    
     func runMutation(){
         let mutationInput = CreateTodoInput(name: "John Doe", description:"John Doe's ABC Business")
         appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
@@ -35,13 +34,24 @@ class AddClientViewController: UITableViewController {
         }
     }
     
+    func runQuery(){
+        appSyncClient?.fetch(query: ListTodosQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            result?.data?.listTodos?.items!.forEach { print(($0?.name)! + " " + ($0?.description)!) }
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-        
+        runMutation()
+        runQuery()
         
 
         // Uncomment the following line to preserve selection between presentations

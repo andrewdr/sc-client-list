@@ -25,8 +25,8 @@
 				"s3TemplateURL": "https://s3.amazonaws.com/scclientlist-20190210152959-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"logicalId": "apiSCclientListAPI"
 			},
-			"lastPushTimeStamp": "2019-02-10T21:41:15.018Z",
-			"lastPushDirHash": "9/eweK23URwhjgTLcJBKqs5n7YA="
+			"lastPushTimeStamp": "2019-02-14T23:18:43.112Z",
+			"lastPushDirHash": "zu8Y6OBlosHpiE5IgdRko56tYzU="
 		}
 	}
 }
