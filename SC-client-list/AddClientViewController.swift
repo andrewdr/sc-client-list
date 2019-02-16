@@ -44,14 +44,39 @@ class AddClientViewController: UITableViewController {
         }
     }
     
+    func deleteEntry(){
+        
+        let deleteInput = DeleteTodoInput(id: "a2c6525d-593b-44b2-a8cc-8961506f37f6")
+        
+        appSyncClient?.perform(mutation: DeleteTodoMutation(input: deleteInput)){ (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription)")
+            }
+            
+            if let resultError = result?.errors{
+                print("Error occurred: \(resultError)")
+                return
+            }
+            
+            print("DB Item with ID: \(deleteInput) was deleted.")
+            
+        }
+        
+        
+        
+        
+    
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-        runMutation()
-        runQuery()
+//        runMutation()
+//        runQuery()
+//        deleteEntry()
         
 
         // Uncomment the following line to preserve selection between presentations
