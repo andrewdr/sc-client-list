@@ -2,21 +2,21 @@
 subscription OnCreateTodo {
   onCreateTodo {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }
 subscription OnUpdateTodo {
   onUpdateTodo {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }
 subscription OnDeleteTodo {
   onDeleteTodo {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }

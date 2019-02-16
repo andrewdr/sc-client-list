@@ -2,21 +2,21 @@
 mutation CreateTodo($input: CreateTodoInput!) {
   createTodo(input: $input) {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }
 mutation UpdateTodo($input: UpdateTodoInput!) {
   updateTodo(input: $input) {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }
 mutation DeleteTodo($input: DeleteTodoInput!) {
   deleteTodo(input: $input) {
     id
-    name
-    description
+    firstName
+    lastName
   }
 }

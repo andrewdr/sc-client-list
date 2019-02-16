@@ -1,7 +1,7 @@
 type Todo {
   id: ID!
-  name: String!
-  description: String
+  firstName: String!
+  lastName: String!
 }
 
 enum ModelSortDirection {
@@ -71,8 +71,8 @@ input ModelBooleanFilterInput {
 
 input ModelTodoFilterInput {
   id: ModelIDFilterInput
-  name: ModelStringFilterInput
-  description: ModelStringFilterInput
+  firstName: ModelStringFilterInput
+  lastName: ModelStringFilterInput
   and: [ModelTodoFilterInput]
   or: [ModelTodoFilterInput]
   not: ModelTodoFilterInput
@@ -85,14 +85,14 @@ type Query {
 
 input CreateTodoInput {
   id: ID
-  name: String!
-  description: String
+  firstName: String!
+  lastName: String!
 }
 
 input UpdateTodoInput {
   id: ID!
-  name: String
-  description: String
+  firstName: String
+  lastName: String
 }
 
 input DeleteTodoInput {
