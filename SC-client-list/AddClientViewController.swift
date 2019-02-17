@@ -17,6 +17,11 @@ class AddClientViewController: UITableViewController {
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var clientPhoto: UIImageView!
     
+
+    
+    
+    
+    
       var appSyncClient: AWSAppSyncClient?
     
 
@@ -47,7 +52,16 @@ class AddClientViewController: UITableViewController {
                 print(error?.localizedDescription ?? "")
                 return
             }
-            result?.data?.listTodos?.items!.forEach { print(($0?.firstName)! + " " + ($0?.lastName)!) }
+            
+            print(result?.data?.listTodos?.items! as Any)
+            
+//            result?.data?.listTodos?.items!.forEach{
+//
+////                print(($0?.firstName)! + " " + ($0?.lastName)!)
+//
+////                print($0?.id as Any, $0?.firstName as Any, $0?.lastName as Any)
+//
+//            }
         }
     }
     
@@ -76,8 +90,11 @@ class AddClientViewController: UITableViewController {
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-        runMutation()
-//        runQuery()
+
+        
+        
+//        runMutation()
+        runQuery()
 //        deleteEntry()
         
 

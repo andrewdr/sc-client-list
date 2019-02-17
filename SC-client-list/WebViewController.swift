@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AWSAppSync
 
 class WebTableCell: UITableViewCell{
     
@@ -16,16 +17,17 @@ class WebTableCell: UITableViewCell{
     
 }
 
+
 class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var webClientTable: UITableView!
     
-    var clients = Client()
+    var clients = [Client]()
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return 3
+        return clients.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,22 +37,49 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
 //        let client: Client
         
-//        let client = clients
-        let viewModel = ClientViewModel(client: clients)
+        let client = clients[indexPath.row]
+        let viewModel = ClientViewModel(client: client)
         
         webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
-        webClientCell.companyName.text = viewModel.companyName
-        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
+//        webClientCell.companyName.text = viewModel.companyName
+//        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
 
         
         return webClientCell
         
     }
     
+    var appSyncClient: AWSAppSyncClient?
+    
+    func runQuery(){
+        appSyncClient?.fetch(query: ListTodosQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            
+          
+
+            print(result?.data?.listTodos?.items as Any)
+            
+            
+//            result?.data?.listTodos?.items!.forEach {
+//
+//                print(($0?.firstName)! + " " + ($0?.lastName)!)
+//
+//            }
+        }
+    }
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+        runQuery()
+
     }
     
 }
