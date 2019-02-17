@@ -2,21 +2,42 @@
 subscription OnCreateTodo {
   onCreateTodo {
     id
+    clientType
     firstName
     lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
   }
 }
 subscription OnUpdateTodo {
   onUpdateTodo {
     id
+    clientType
     firstName
     lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
   }
 }
 subscription OnDeleteTodo {
   onDeleteTodo {
     id
+    clientType
     firstName
     lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
   }
 }

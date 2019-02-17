@@ -1,7 +1,14 @@
 type Todo {
   id: ID!
+  clientType: String!
   firstName: String!
   lastName: String!
+  companyName: String!
+  companyDesc: String!
+  officephone: Int!
+  cellPhone: Int!
+  email: String!
+  website: String!
 }
 
 enum ModelSortDirection {
@@ -71,8 +78,15 @@ input ModelBooleanFilterInput {
 
 input ModelTodoFilterInput {
   id: ModelIDFilterInput
+  clientType: ModelStringFilterInput
   firstName: ModelStringFilterInput
   lastName: ModelStringFilterInput
+  companyName: ModelStringFilterInput
+  companyDesc: ModelStringFilterInput
+  officephone: ModelIntFilterInput
+  cellPhone: ModelIntFilterInput
+  email: ModelStringFilterInput
+  website: ModelStringFilterInput
   and: [ModelTodoFilterInput]
   or: [ModelTodoFilterInput]
   not: ModelTodoFilterInput
@@ -85,14 +99,28 @@ type Query {
 
 input CreateTodoInput {
   id: ID
+  clientType: String!
   firstName: String!
   lastName: String!
+  companyName: String!
+  companyDesc: String!
+  officephone: Int!
+  cellPhone: Int!
+  email: String!
+  website: String!
 }
 
 input UpdateTodoInput {
   id: ID!
+  clientType: String
   firstName: String
   lastName: String
+  companyName: String
+  companyDesc: String
+  officephone: Int
+  cellPhone: Int
+  email: String
+  website: String
 }
 
 input DeleteTodoInput {

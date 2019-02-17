@@ -5,8 +5,8 @@ import AWSAppSync
 public struct CreateTodoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID? = nil, firstName: String, lastName: String) {
-    graphQLMap = ["id": id, "firstName": firstName, "lastName": lastName]
+  public init(id: GraphQLID? = nil, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+    graphQLMap = ["id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website]
   }
 
   public var id: GraphQLID? {
@@ -15,6 +15,15 @@ public struct CreateTodoInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var clientType: String {
+    get {
+      return graphQLMap["clientType"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "clientType")
     }
   }
 
@@ -35,13 +44,67 @@ public struct CreateTodoInput: GraphQLMapConvertible {
       graphQLMap.updateValue(newValue, forKey: "lastName")
     }
   }
+
+  public var companyName: String {
+    get {
+      return graphQLMap["companyName"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyName")
+    }
+  }
+
+  public var companyDesc: String {
+    get {
+      return graphQLMap["companyDesc"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyDesc")
+    }
+  }
+
+  public var officephone: Int {
+    get {
+      return graphQLMap["officephone"] as! Int
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "officephone")
+    }
+  }
+
+  public var cellPhone: Int {
+    get {
+      return graphQLMap["cellPhone"] as! Int
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "cellPhone")
+    }
+  }
+
+  public var email: String {
+    get {
+      return graphQLMap["email"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
+    }
+  }
+
+  public var website: String {
+    get {
+      return graphQLMap["website"] as! String
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "website")
+    }
+  }
 }
 
 public struct UpdateTodoInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: GraphQLID, firstName: String? = nil, lastName: String? = nil) {
-    graphQLMap = ["id": id, "firstName": firstName, "lastName": lastName]
+  public init(id: GraphQLID, clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, companyName: String? = nil, companyDesc: String? = nil, officephone: Int? = nil, cellPhone: Int? = nil, email: String? = nil, website: String? = nil) {
+    graphQLMap = ["id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website]
   }
 
   public var id: GraphQLID {
@@ -50,6 +113,15 @@ public struct UpdateTodoInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var clientType: String? {
+    get {
+      return graphQLMap["clientType"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "clientType")
     }
   }
 
@@ -68,6 +140,60 @@ public struct UpdateTodoInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "lastName")
+    }
+  }
+
+  public var companyName: String? {
+    get {
+      return graphQLMap["companyName"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyName")
+    }
+  }
+
+  public var companyDesc: String? {
+    get {
+      return graphQLMap["companyDesc"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyDesc")
+    }
+  }
+
+  public var officephone: Int? {
+    get {
+      return graphQLMap["officephone"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "officephone")
+    }
+  }
+
+  public var cellPhone: Int? {
+    get {
+      return graphQLMap["cellPhone"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "cellPhone")
+    }
+  }
+
+  public var email: String? {
+    get {
+      return graphQLMap["email"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
+    }
+  }
+
+  public var website: String? {
+    get {
+      return graphQLMap["website"] as! String?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "website")
     }
   }
 }
@@ -92,8 +218,8 @@ public struct DeleteTodoInput: GraphQLMapConvertible {
 public struct ModelTodoFilterInput: GraphQLMapConvertible {
   public var graphQLMap: GraphQLMap
 
-  public init(id: ModelIDFilterInput? = nil, firstName: ModelStringFilterInput? = nil, lastName: ModelStringFilterInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil) {
-    graphQLMap = ["id": id, "firstName": firstName, "lastName": lastName, "and": and, "or": or, "not": not]
+  public init(id: ModelIDFilterInput? = nil, clientType: ModelStringFilterInput? = nil, firstName: ModelStringFilterInput? = nil, lastName: ModelStringFilterInput? = nil, companyName: ModelStringFilterInput? = nil, companyDesc: ModelStringFilterInput? = nil, officephone: ModelIntFilterInput? = nil, cellPhone: ModelIntFilterInput? = nil, email: ModelStringFilterInput? = nil, website: ModelStringFilterInput? = nil, and: [ModelTodoFilterInput?]? = nil, or: [ModelTodoFilterInput?]? = nil, not: ModelTodoFilterInput? = nil) {
+    graphQLMap = ["id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website, "and": and, "or": or, "not": not]
   }
 
   public var id: ModelIDFilterInput? {
@@ -102,6 +228,15 @@ public struct ModelTodoFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "id")
+    }
+  }
+
+  public var clientType: ModelStringFilterInput? {
+    get {
+      return graphQLMap["clientType"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "clientType")
     }
   }
 
@@ -120,6 +255,60 @@ public struct ModelTodoFilterInput: GraphQLMapConvertible {
     }
     set {
       graphQLMap.updateValue(newValue, forKey: "lastName")
+    }
+  }
+
+  public var companyName: ModelStringFilterInput? {
+    get {
+      return graphQLMap["companyName"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyName")
+    }
+  }
+
+  public var companyDesc: ModelStringFilterInput? {
+    get {
+      return graphQLMap["companyDesc"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "companyDesc")
+    }
+  }
+
+  public var officephone: ModelIntFilterInput? {
+    get {
+      return graphQLMap["officephone"] as! ModelIntFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "officephone")
+    }
+  }
+
+  public var cellPhone: ModelIntFilterInput? {
+    get {
+      return graphQLMap["cellPhone"] as! ModelIntFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "cellPhone")
+    }
+  }
+
+  public var email: ModelStringFilterInput? {
+    get {
+      return graphQLMap["email"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "email")
+    }
+  }
+
+  public var website: ModelStringFilterInput? {
+    get {
+      return graphQLMap["website"] as! ModelStringFilterInput?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "website")
     }
   }
 
@@ -347,9 +536,98 @@ public struct ModelStringFilterInput: GraphQLMapConvertible {
   }
 }
 
+public struct ModelIntFilterInput: GraphQLMapConvertible {
+  public var graphQLMap: GraphQLMap
+
+  public init(ne: Int? = nil, eq: Int? = nil, le: Int? = nil, lt: Int? = nil, ge: Int? = nil, gt: Int? = nil, contains: Int? = nil, notContains: Int? = nil, between: [Int?]? = nil) {
+    graphQLMap = ["ne": ne, "eq": eq, "le": le, "lt": lt, "ge": ge, "gt": gt, "contains": contains, "notContains": notContains, "between": between]
+  }
+
+  public var ne: Int? {
+    get {
+      return graphQLMap["ne"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ne")
+    }
+  }
+
+  public var eq: Int? {
+    get {
+      return graphQLMap["eq"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "eq")
+    }
+  }
+
+  public var le: Int? {
+    get {
+      return graphQLMap["le"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "le")
+    }
+  }
+
+  public var lt: Int? {
+    get {
+      return graphQLMap["lt"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "lt")
+    }
+  }
+
+  public var ge: Int? {
+    get {
+      return graphQLMap["ge"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "ge")
+    }
+  }
+
+  public var gt: Int? {
+    get {
+      return graphQLMap["gt"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "gt")
+    }
+  }
+
+  public var contains: Int? {
+    get {
+      return graphQLMap["contains"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "contains")
+    }
+  }
+
+  public var notContains: Int? {
+    get {
+      return graphQLMap["notContains"] as! Int?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "notContains")
+    }
+  }
+
+  public var between: [Int?]? {
+    get {
+      return graphQLMap["between"] as! [Int?]?
+    }
+    set {
+      graphQLMap.updateValue(newValue, forKey: "between")
+    }
+  }
+}
+
 public final class CreateTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation CreateTodo($input: CreateTodoInput!) {\n  createTodo(input: $input) {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "mutation CreateTodo($input: CreateTodoInput!) {\n  createTodo(input: $input) {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public var input: CreateTodoInput
 
@@ -393,8 +671,15 @@ public final class CreateTodoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -403,8 +688,8 @@ public final class CreateTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -425,6 +710,15 @@ public final class CreateTodoMutation: GraphQLMutation {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -442,13 +736,67 @@ public final class CreateTodoMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class UpdateTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation UpdateTodo($input: UpdateTodoInput!) {\n  updateTodo(input: $input) {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "mutation UpdateTodo($input: UpdateTodoInput!) {\n  updateTodo(input: $input) {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public var input: UpdateTodoInput
 
@@ -492,8 +840,15 @@ public final class UpdateTodoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -502,8 +857,8 @@ public final class UpdateTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -524,6 +879,15 @@ public final class UpdateTodoMutation: GraphQLMutation {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -541,13 +905,67 @@ public final class UpdateTodoMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class DeleteTodoMutation: GraphQLMutation {
   public static let operationString =
-    "mutation DeleteTodo($input: DeleteTodoInput!) {\n  deleteTodo(input: $input) {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "mutation DeleteTodo($input: DeleteTodoInput!) {\n  deleteTodo(input: $input) {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public var input: DeleteTodoInput
 
@@ -591,8 +1009,15 @@ public final class DeleteTodoMutation: GraphQLMutation {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -601,8 +1026,8 @@ public final class DeleteTodoMutation: GraphQLMutation {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -623,6 +1048,15 @@ public final class DeleteTodoMutation: GraphQLMutation {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -640,13 +1074,67 @@ public final class DeleteTodoMutation: GraphQLMutation {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class GetTodoQuery: GraphQLQuery {
   public static let operationString =
-    "query GetTodo($id: ID!) {\n  getTodo(id: $id) {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "query GetTodo($id: ID!) {\n  getTodo(id: $id) {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public var id: GraphQLID
 
@@ -690,8 +1178,15 @@ public final class GetTodoQuery: GraphQLQuery {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -700,8 +1195,8 @@ public final class GetTodoQuery: GraphQLQuery {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -722,6 +1217,15 @@ public final class GetTodoQuery: GraphQLQuery {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -739,13 +1243,67 @@ public final class GetTodoQuery: GraphQLQuery {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class ListTodosQuery: GraphQLQuery {
   public static let operationString =
-    "query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {\n  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      firstName\n      lastName\n    }\n    nextToken\n  }\n}"
+    "query ListTodos($filter: ModelTodoFilterInput, $limit: Int, $nextToken: String) {\n  listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {\n    __typename\n    items {\n      __typename\n      id\n      clientType\n      firstName\n      lastName\n      companyName\n      companyDesc\n      officephone\n      cellPhone\n      email\n      website\n    }\n    nextToken\n  }\n}"
 
   public var filter: ModelTodoFilterInput?
   public var limit: Int?
@@ -839,8 +1397,15 @@ public final class ListTodosQuery: GraphQLQuery {
         public static let selections: [GraphQLSelection] = [
           GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
           GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+          GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
           GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
           GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+          GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+          GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+          GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+          GraphQLField("email", type: .nonNull(.scalar(String.self))),
+          GraphQLField("website", type: .nonNull(.scalar(String.self))),
         ]
 
         public var snapshot: Snapshot
@@ -849,8 +1414,8 @@ public final class ListTodosQuery: GraphQLQuery {
           self.snapshot = snapshot
         }
 
-        public init(id: GraphQLID, firstName: String, lastName: String) {
-          self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+        public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+          self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
         }
 
         public var __typename: String {
@@ -871,6 +1436,15 @@ public final class ListTodosQuery: GraphQLQuery {
           }
         }
 
+        public var clientType: String {
+          get {
+            return snapshot["clientType"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "clientType")
+          }
+        }
+
         public var firstName: String {
           get {
             return snapshot["firstName"]! as! String
@@ -888,6 +1462,60 @@ public final class ListTodosQuery: GraphQLQuery {
             snapshot.updateValue(newValue, forKey: "lastName")
           }
         }
+
+        public var companyName: String {
+          get {
+            return snapshot["companyName"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "companyName")
+          }
+        }
+
+        public var companyDesc: String {
+          get {
+            return snapshot["companyDesc"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "companyDesc")
+          }
+        }
+
+        public var officephone: Int {
+          get {
+            return snapshot["officephone"]! as! Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "officephone")
+          }
+        }
+
+        public var cellPhone: Int {
+          get {
+            return snapshot["cellPhone"]! as! Int
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "cellPhone")
+          }
+        }
+
+        public var email: String {
+          get {
+            return snapshot["email"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "email")
+          }
+        }
+
+        public var website: String {
+          get {
+            return snapshot["website"]! as! String
+          }
+          set {
+            snapshot.updateValue(newValue, forKey: "website")
+          }
+        }
       }
     }
   }
@@ -895,7 +1523,7 @@ public final class ListTodosQuery: GraphQLQuery {
 
 public final class OnCreateTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnCreateTodo {\n  onCreateTodo {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "subscription OnCreateTodo {\n  onCreateTodo {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public init() {
   }
@@ -932,8 +1560,15 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -942,8 +1577,8 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -964,6 +1599,15 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -981,13 +1625,67 @@ public final class OnCreateTodoSubscription: GraphQLSubscription {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class OnUpdateTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnUpdateTodo {\n  onUpdateTodo {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "subscription OnUpdateTodo {\n  onUpdateTodo {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public init() {
   }
@@ -1024,8 +1722,15 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -1034,8 +1739,8 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -1056,6 +1761,15 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -1073,13 +1787,67 @@ public final class OnUpdateTodoSubscription: GraphQLSubscription {
           snapshot.updateValue(newValue, forKey: "lastName")
         }
       }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
+        }
+      }
     }
   }
 }
 
 public final class OnDeleteTodoSubscription: GraphQLSubscription {
   public static let operationString =
-    "subscription OnDeleteTodo {\n  onDeleteTodo {\n    __typename\n    id\n    firstName\n    lastName\n  }\n}"
+    "subscription OnDeleteTodo {\n  onDeleteTodo {\n    __typename\n    id\n    clientType\n    firstName\n    lastName\n    companyName\n    companyDesc\n    officephone\n    cellPhone\n    email\n    website\n  }\n}"
 
   public init() {
   }
@@ -1116,8 +1884,15 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
       public static let selections: [GraphQLSelection] = [
         GraphQLField("__typename", type: .nonNull(.scalar(String.self))),
         GraphQLField("id", type: .nonNull(.scalar(GraphQLID.self))),
+        GraphQLField("clientType", type: .nonNull(.scalar(String.self))),
         GraphQLField("firstName", type: .nonNull(.scalar(String.self))),
         GraphQLField("lastName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyName", type: .nonNull(.scalar(String.self))),
+        GraphQLField("companyDesc", type: .nonNull(.scalar(String.self))),
+        GraphQLField("officephone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("cellPhone", type: .nonNull(.scalar(Int.self))),
+        GraphQLField("email", type: .nonNull(.scalar(String.self))),
+        GraphQLField("website", type: .nonNull(.scalar(String.self))),
       ]
 
       public var snapshot: Snapshot
@@ -1126,8 +1901,8 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         self.snapshot = snapshot
       }
 
-      public init(id: GraphQLID, firstName: String, lastName: String) {
-        self.init(snapshot: ["__typename": "Todo", "id": id, "firstName": firstName, "lastName": lastName])
+      public init(id: GraphQLID, clientType: String, firstName: String, lastName: String, companyName: String, companyDesc: String, officephone: Int, cellPhone: Int, email: String, website: String) {
+        self.init(snapshot: ["__typename": "Todo", "id": id, "clientType": clientType, "firstName": firstName, "lastName": lastName, "companyName": companyName, "companyDesc": companyDesc, "officephone": officephone, "cellPhone": cellPhone, "email": email, "website": website])
       }
 
       public var __typename: String {
@@ -1148,6 +1923,15 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         }
       }
 
+      public var clientType: String {
+        get {
+          return snapshot["clientType"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "clientType")
+        }
+      }
+
       public var firstName: String {
         get {
           return snapshot["firstName"]! as! String
@@ -1163,6 +1947,60 @@ public final class OnDeleteTodoSubscription: GraphQLSubscription {
         }
         set {
           snapshot.updateValue(newValue, forKey: "lastName")
+        }
+      }
+
+      public var companyName: String {
+        get {
+          return snapshot["companyName"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyName")
+        }
+      }
+
+      public var companyDesc: String {
+        get {
+          return snapshot["companyDesc"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "companyDesc")
+        }
+      }
+
+      public var officephone: Int {
+        get {
+          return snapshot["officephone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "officephone")
+        }
+      }
+
+      public var cellPhone: Int {
+        get {
+          return snapshot["cellPhone"]! as! Int
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "cellPhone")
+        }
+      }
+
+      public var email: String {
+        get {
+          return snapshot["email"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "email")
+        }
+      }
+
+      public var website: String {
+        get {
+          return snapshot["website"]! as! String
+        }
+        set {
+          snapshot.updateValue(newValue, forKey: "website")
         }
       }
     }

@@ -2,8 +2,15 @@
 query GetTodo($id: ID!) {
   getTodo(id: $id) {
     id
+    clientType
     firstName
     lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
   }
 }
 query ListTodos(
@@ -14,8 +21,15 @@ query ListTodos(
   listTodos(filter: $filter, limit: $limit, nextToken: $nextToken) {
     items {
       id
+      clientType
       firstName
       lastName
+      companyName
+      companyDesc
+      officephone
+      cellPhone
+      email
+      website
     }
     nextToken
   }

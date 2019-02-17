@@ -57,17 +57,24 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
                 print(error?.localizedDescription ?? "")
                 return
             }
-            
-          
-
-            print(result?.data?.listTodos?.items as Any)
-            
-            
-//            result?.data?.listTodos?.items!.forEach {
-//
-//                print(($0?.firstName)! + " " + ($0?.lastName)!)
+//            else if let results = result{
 //
 //            }
+            
+        
+            var dataArray = [String]()
+            
+            result?.data?.listTodos?.items?.forEach {
+                
+                
+                dataArray.append(($0?.firstName)!)
+                dataArray.append(($0?.lastName)!)
+                
+//                print(dataArray)
+
+//                print(($0?.firstName)! + " " + ($0?.lastName)!)
+
+            }
         }
     }
     

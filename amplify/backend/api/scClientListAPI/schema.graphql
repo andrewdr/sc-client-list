@@ -1,5 +1,12 @@
 type Todo @model {
   id: ID!
+  clientType: String!
   firstName: String!
   lastName: String!
+  companyName: String!
+  companyDesc: String!
+  officephone: Int!
+  cellPhone: Int!
+  email: String!
+  website: String!
 }
