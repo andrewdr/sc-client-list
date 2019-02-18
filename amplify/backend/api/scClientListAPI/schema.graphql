@@ -5,8 +5,8 @@ type Todo @model {
   lastName: String!
   companyName: String!
   companyDesc: String!
-  officephone: Int!
-  cellPhone: Int!
+  officephone: String!
+  cellPhone: String!
   email: String!
   website: String!
 }

@@ -5,8 +5,8 @@ type Todo {
   lastName: String!
   companyName: String!
   companyDesc: String!
-  officephone: Int!
-  cellPhone: Int!
+  officephone: String!
+  cellPhone: String!
   email: String!
   website: String!
 }
@@ -83,8 +83,8 @@ input ModelTodoFilterInput {
   lastName: ModelStringFilterInput
   companyName: ModelStringFilterInput
   companyDesc: ModelStringFilterInput
-  officephone: ModelIntFilterInput
-  cellPhone: ModelIntFilterInput
+  officephone: ModelStringFilterInput
+  cellPhone: ModelStringFilterInput
   email: ModelStringFilterInput
   website: ModelStringFilterInput
   and: [ModelTodoFilterInput]
@@ -104,8 +104,8 @@ input CreateTodoInput {
   lastName: String!
   companyName: String!
   companyDesc: String!
-  officephone: Int!
-  cellPhone: Int!
+  officephone: String!
+  cellPhone: String!
   email: String!
   website: String!
 }
@@ -117,8 +117,8 @@ input UpdateTodoInput {
   lastName: String
   companyName: String
   companyDesc: String
-  officephone: Int
-  cellPhone: Int
+  officephone: String
+  cellPhone: String
   email: String
   website: String
 }

@@ -85,7 +85,7 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-        runQuery()
+//        runQuery()
 
     }
     

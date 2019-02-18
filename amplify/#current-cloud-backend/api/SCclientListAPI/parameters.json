@@ -1,7 +1,7 @@
 {
     "AppSyncApiName": "SCclientListAPI",
-    "schemaGraphql": "s3://scclientlist-20190210152959-deployment/amplify-appsync-files/schema.graphql.1550436483303",
+    "schemaGraphql": "s3://scclientlist-20190210152959-deployment/amplify-appsync-files/schema.graphql.1550450289618",
     "ResolverBucket": "scclientlist-20190210152959-deployment",
     "ResolverRootKey": "amplify-appsync-files",
-    "DeploymentTimestamp": "1550436483303"
+    "DeploymentTimestamp": "1550450289618"
 }

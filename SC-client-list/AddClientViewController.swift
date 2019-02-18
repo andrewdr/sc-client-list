@@ -30,11 +30,7 @@ class AddClientViewController: UITableViewController {
 
     func runMutation(){
         
-//        let firstNameText = firstName.text!
-//        let lastNameText = lastName.text!
-        
-        
-        let mutationInput = CreateTodoInput(firstName: "Andrew", lastName: "Draper")
+        let mutationInput = CreateTodoInput(clientType: "Web", firstName: "Andrew", lastName: "Draper", companyName: "Draper Labs", companyDesc: "Mobile Development Company", officephone: "555-555-5555", cellPhone: "333-333-3333", email: "Andy.Draper83@gmail.com", website: "https://draperwebservices.com")
         appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -53,13 +49,13 @@ class AddClientViewController: UITableViewController {
                 return
             }
             
-            print(result?.data?.listTodos?.items! as Any)
+            print(result?.data?.listTodos?.snapshot as Any)
             
 //            result?.data?.listTodos?.items!.forEach{
 //
-////                print(($0?.firstName)! + " " + ($0?.lastName)!)
+//                print(($0?.firstName)! + " " + ($0?.lastName)!)
 //
-////                print($0?.id as Any, $0?.firstName as Any, $0?.lastName as Any)
+//                print($0?.id as Any, $0?.firstName as Any, $0?.lastName as Any)
 //
 //            }
         }
@@ -93,7 +89,7 @@ class AddClientViewController: UITableViewController {
 
         
         
-//        runMutation()
+        runMutation()
         runQuery()
 //        deleteEntry()
         
