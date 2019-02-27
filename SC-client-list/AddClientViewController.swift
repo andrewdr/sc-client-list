@@ -18,14 +18,7 @@ class AddClientViewController: UITableViewController {
     @IBOutlet weak var clientPhoto: UIImageView!
     
 
-    
-    
-    
-    
-      var appSyncClient: AWSAppSyncClient?
-    
-
-    
+    var appSyncClient: AWSAppSyncClient?
     
 
     func runMutation(){

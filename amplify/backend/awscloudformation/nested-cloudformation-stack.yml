@@ -78,16 +78,16 @@
 				}
 			}
 		},
-		"apiSCclientListAPI": {
+		"apiscList2": {
 			"Type": "AWS::CloudFormation::Stack",
 			"Properties": {
-				"TemplateURL": "https://s3.amazonaws.com/scclientlist-20190210152959-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"TemplateURL": "https://s3.amazonaws.com/scclientlist-20190227132951-deployment/amplify-cfn-templates/api/cloudformation-template.json",
 				"Parameters": {
-					"AppSyncApiName": "SCclientListAPI",
-					"schemaGraphql": "s3://scclientlist-20190210152959-deployment/amplify-appsync-files/schema.graphql.1550450289618",
-					"ResolverBucket": "scclientlist-20190210152959-deployment",
+					"AppSyncApiName": "scList2",
+					"schemaGraphql": "s3://scclientlist-20190227132951-deployment/amplify-appsync-files/schema.graphql.1551297001767",
+					"ResolverBucket": "scclientlist-20190227132951-deployment",
 					"ResolverRootKey": "amplify-appsync-files",
-					"DeploymentTimestamp": "1550450289618"
+					"DeploymentTimestamp": "1551297001767"
 				}
 			}
 		}

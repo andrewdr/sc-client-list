@@ -1,32 +1,32 @@
 {
 	"providers": {
 		"awscloudformation": {
-			"AuthRoleName": "scclientlist-20190210152959-authRole",
-			"UnauthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190210152959-unauthRole",
-			"AuthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190210152959-authRole",
+			"AuthRoleName": "scclientlist-20190227132951-authRole",
+			"UnauthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190227132951-unauthRole",
+			"AuthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190227132951-authRole",
 			"Region": "us-east-2",
-			"DeploymentBucketName": "scclientlist-20190210152959-deployment",
-			"UnauthRoleName": "scclientlist-20190210152959-unauthRole",
-			"StackName": "scclientlist-20190210152959",
-			"StackId": "arn:aws:cloudformation:us-east-2:248792958204:stack/scclientlist-20190210152959/04e27c90-2d7b-11e9-bdb0-063ebf2048ea"
+			"DeploymentBucketName": "scclientlist-20190227132951-deployment",
+			"UnauthRoleName": "scclientlist-20190227132951-unauthRole",
+			"StackName": "scclientlist-20190227132951",
+			"StackId": "arn:aws:cloudformation:us-east-2:248792958204:stack/scclientlist-20190227132951/0da714a0-3ac6-11e9-8fc7-0a7dfa8cb208"
 		}
 	},
 	"api": {
-		"SCclientListAPI": {
+		"scList2": {
 			"service": "AppSync",
 			"providerPlugin": "awscloudformation",
 			"output": {
 				"securityType": "API_KEY",
-				"GraphQLAPIIdOutput": "lhjcfhgzdffxxhhie5vf3zhds4",
-				"GraphQLAPIEndpointOutput": "https://poyhx7hhjnceffkviyxpjleobe.appsync-api.us-east-2.amazonaws.com/graphql",
-				"GraphQLAPIKeyOutput": "da2-73ffcotdard5xkwdcjmj74aj7u"
+				"GraphQLAPIIdOutput": "stypprykwrfnla7yxpisvqmsym",
+				"GraphQLAPIEndpointOutput": "https://tney7ueugbb2znnxhzunmv3nru.appsync-api.us-east-2.amazonaws.com/graphql",
+				"GraphQLAPIKeyOutput": "da2-ofsjb4exsjd7nb5lqu45gkdodi"
 			},
 			"providerMetadata": {
-				"s3TemplateURL": "https://s3.amazonaws.com/scclientlist-20190210152959-deployment/amplify-cfn-templates/api/cloudformation-template.json",
-				"logicalId": "apiSCclientListAPI"
+				"s3TemplateURL": "https://s3.amazonaws.com/scclientlist-20190227132951-deployment/amplify-cfn-templates/api/cloudformation-template.json",
+				"logicalId": "apiscList2"
 			},
-			"lastPushTimeStamp": "2019-02-18T00:39:50.559Z",
-			"lastPushDirHash": "sXtFAzJdpwqYZDrSeblsajwUs2g="
+			"lastPushTimeStamp": "2019-02-27T19:51:14.172Z",
+			"lastPushDirHash": "SBrwgga2cdi3/0GgddrE+MiRwQo="
 		}
 	}
 }
