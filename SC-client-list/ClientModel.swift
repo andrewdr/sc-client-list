@@ -21,10 +21,10 @@ struct Client {
     
     let officePhone: Int?
     let cellPhone: Int?
-    let email: URL?
-    let website: URL?
+    let email: String?
+    let website: String?
     
-    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImage: String? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: Int? = nil, cellPhone: Int? = nil, email: URL? = nil, website: URL? = nil ){
+    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImage: String? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: Int? = nil, cellPhone: Int? = nil, email: String? = nil, website: String? = nil ){
         
         self.clientType = clientType
         self.firstName = firstName

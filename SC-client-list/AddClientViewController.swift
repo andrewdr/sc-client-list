@@ -19,11 +19,28 @@ class AddClientViewController: UITableViewController {
     
 
     var appSyncClient: AWSAppSyncClient?
+
+    
+    
+//    @IBAction func doneButton(_ sender: Any) {
+//
+//        runMutation()
+//    }
+    
+    
+//    override func setEditing(_ editing: Bool, animated: Bool) {
+//        super.setEditing(true, animated: animated)
+//
+//        if self.isEditing{
+//            self.editButton
+//        }
+//
+//    }
     
 
     func runMutation(){
         
-        let mutationInput = CreateTodoInput(clientType: "Web", firstName: "Andrew", lastName: "Draper", companyName: "Draper Labs", companyDesc: "Mobile Development Company", officephone: "555-555-5555", cellPhone: "333-333-3333", email: "Andy.Draper83@gmail.com", website: "https://draperwebservices.com")
+        let mutationInput = CreateTodoInput(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, companyName: "Draper Labs", companyDesc: "Mobile Development Company", officephone: "555-555-5555", cellPhone: "333-333-3333", email: "Andy.Draper83@gmail.com", website: "https://draperwebservices.com")
         appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -82,7 +99,7 @@ class AddClientViewController: UITableViewController {
 
         
         
-        runMutation()
+//        runMutation()
         runQuery()
 //        deleteEntry()
         
@@ -101,7 +118,7 @@ class AddClientViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        return 9
     }
 
     /*

@@ -20,8 +20,8 @@ struct ClientViewModel{
     
     let officePhone: Int
     let cellPhone: Int
-    let email: URL
-    let website: URL
+    let email: String
+    let website: String
     
     init(client:Client){
         
@@ -34,8 +34,8 @@ struct ClientViewModel{
         
         officePhone = client.officePhone ?? 555-555-5555
         cellPhone = client.cellPhone ?? 555-555-5555
-        email = client.email ?? URL(string: "_")!
-        website = client.website ?? URL(string: "_")!
+        email = client.email ?? "person@business.com"
+        website = client.website ?? "ABCbusiness.com"
         
     }
     
