@@ -19,12 +19,12 @@ struct Client {
     let companyName: String?
     let companyDesc: String?
     
-    let officePhone: Int?
-    let cellPhone: Int?
+    let officePhone: String?
+    let cellPhone: String?
     let email: String?
     let website: String?
     
-    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImage: String? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: Int? = nil, cellPhone: Int? = nil, email: String? = nil, website: String? = nil ){
+    init(clientType: String? = nil, firstName: String? = nil, lastName: String? = nil, clientImage: String? = nil, companyName: String? =  nil, companyDesc: String? = nil, officePhone: String? = nil, cellPhone: String? = nil, email: String? = nil, website: String? = nil ){
         
         self.clientType = clientType
         self.firstName = firstName

@@ -16,31 +16,38 @@ class AddClientViewController: UITableViewController {
     @IBOutlet weak var firstName: UITextField!
     @IBOutlet weak var lastName: UITextField!
     @IBOutlet weak var clientPhoto: UIImageView!
+    @IBOutlet weak var companyName: UITextField!
+    @IBOutlet weak var companyDesc: UITextField!
+    @IBOutlet weak var officePhone: UITextField!
+    @IBOutlet weak var cellPhone: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var websiteURL: UITextField!
     
 
     var appSyncClient: AWSAppSyncClient?
 
     
     
-//    @IBAction func doneButton(_ sender: Any) {
-//
-//        runMutation()
-//    }
+    @IBAction func doneButton(_ sender: Any) {
+
+        runMutation()
+    }
+    
+//    var client = Client()
     
     
-//    override func setEditing(_ editing: Bool, animated: Bool) {
-//        super.setEditing(true, animated: animated)
-//
-//        if self.isEditing{
-//            self.editButton
-//        }
-//
-//    }
+    
+
     
 
     func runMutation(){
         
-        let mutationInput = CreateTodoInput(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, companyName: "Draper Labs", companyDesc: "Mobile Development Company", officephone: "555-555-5555", cellPhone: "333-333-3333", email: "Andy.Draper83@gmail.com", website: "https://draperwebservices.com")
+        let client  = Client(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, clientImage: "blank-avatar.png", companyName: companyName.text!, companyDesc: companyDesc.text!, officePhone: officePhone.text!, cellPhone: cellPhone.text!, email: email.text!, website: websiteURL.text!)
+        
+        let viewModel = ClientViewModel(client: client)
+        
+        
+        let mutationInput = CreateTodoInput(clientType: viewModel.clientType, firstName: viewModel.firstName, lastName: viewModel.lastName, companyName: viewModel.companyName, companyDesc: viewModel.companyDesc, officephone: viewModel.officePhone, cellPhone: viewModel.cellPhone, email: viewModel.email, website: viewModel.website)
         appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
             if let error = error as? AWSAppSyncClientError {
                 print("Error occurred: \(error.localizedDescription )")
@@ -106,7 +113,7 @@ class AddClientViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source

@@ -444,9 +444,15 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addClientTable" destination="SIZ-U1-kYL" id="9VG-zS-zfk"/>
+                        <outlet property="cellPhone" destination="nzD-v5-6Ww" id="jYV-cf-S4a"/>
                         <outlet property="clientPhoto" destination="B1J-3W-dy0" id="PsS-RG-iLE"/>
+                        <outlet property="companyDesc" destination="VP9-oK-cM0" id="nhs-l4-7Ld"/>
+                        <outlet property="companyName" destination="dcJ-3B-U7Y" id="9rN-lR-sz9"/>
+                        <outlet property="email" destination="s8S-2P-QAP" id="Csr-SM-Z0C"/>
                         <outlet property="firstName" destination="I4Q-8y-HPd" id="TmX-Pn-vKz"/>
                         <outlet property="lastName" destination="e7O-mI-CHe" id="T8v-jc-V51"/>
+                        <outlet property="officePhone" destination="X28-OF-61g" id="NeM-uw-rUb"/>
+                        <outlet property="websiteURL" destination="gZQ-Pt-R2N" id="uVR-Pl-V18"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USc-Ed-ClU" userLabel="First Responder" sceneMemberID="firstResponder"/>
