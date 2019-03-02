@@ -23,6 +23,9 @@ class AddClientViewController: UITableViewController {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var websiteURL: UITextField!
     
+    @IBOutlet var allTextFields: [UITextField]!
+    
+    
 
     var appSyncClient: AWSAppSyncClient?
 
@@ -30,10 +33,12 @@ class AddClientViewController: UITableViewController {
     
     @IBAction func doneButton(_ sender: Any) {
         
-        if (firstName.text?.isEmpty)!{
-            fieldAlert()
-        }else{
+        let allTexts = allTextFields.filter{ $0.text == ""}.count
+        
+        if allTexts == 0{
             runMutation()
+        }else{
+            fieldAlert()
         }
     }
     

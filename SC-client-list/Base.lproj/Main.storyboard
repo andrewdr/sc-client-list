@@ -453,6 +453,14 @@
                         <outlet property="lastName" destination="e7O-mI-CHe" id="T8v-jc-V51"/>
                         <outlet property="officePhone" destination="X28-OF-61g" id="NeM-uw-rUb"/>
                         <outlet property="websiteURL" destination="gZQ-Pt-R2N" id="uVR-Pl-V18"/>
+                        <outletCollection property="allTextFields" destination="I4Q-8y-HPd" collectionClass="NSMutableArray" id="cs1-I3-kET"/>
+                        <outletCollection property="allTextFields" destination="e7O-mI-CHe" collectionClass="NSMutableArray" id="UKD-G4-weE"/>
+                        <outletCollection property="allTextFields" destination="dcJ-3B-U7Y" collectionClass="NSMutableArray" id="ito-BF-pdE"/>
+                        <outletCollection property="allTextFields" destination="VP9-oK-cM0" collectionClass="NSMutableArray" id="JsL-Mi-JTf"/>
+                        <outletCollection property="allTextFields" destination="X28-OF-61g" collectionClass="NSMutableArray" id="J7f-qL-jO9"/>
+                        <outletCollection property="allTextFields" destination="nzD-v5-6Ww" collectionClass="NSMutableArray" id="hXg-5M-MFT"/>
+                        <outletCollection property="allTextFields" destination="s8S-2P-QAP" collectionClass="NSMutableArray" id="Eq8-tI-1fj"/>
+                        <outletCollection property="allTextFields" destination="gZQ-Pt-R2N" collectionClass="NSMutableArray" id="H3w-Nf-J60"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="USc-Ed-ClU" userLabel="First Responder" sceneMemberID="firstResponder"/>
