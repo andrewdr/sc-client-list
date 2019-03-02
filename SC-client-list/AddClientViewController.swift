@@ -29,16 +29,15 @@ class AddClientViewController: UITableViewController {
     
     
     @IBAction func doneButton(_ sender: Any) {
-
-        runMutation()
+        
+        if (firstName.text?.isEmpty)!{
+            fieldAlert()
+        }else{
+            runMutation()
+        }
     }
     
-//    var client = Client()
-    
-    
-    
 
-    
 
     func runMutation(){
         
@@ -97,6 +96,23 @@ class AddClientViewController: UITableViewController {
         }
     }
     
+    
+    
+//  MARK: - Alert
+    
+    func fieldAlert(){
+        
+    let textFieldAlert = UIAlertController(title: "Form Incomplete", message: "Please fill in all information", preferredStyle: .alert)
+    
+        textFieldAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(textFieldAlert, animated: true)
+    }
+    
+    
+
+    
+//  MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -106,8 +122,8 @@ class AddClientViewController: UITableViewController {
 
         
         
-//        runMutation()
-        runQuery()
+
+//        runQuery()
 //        deleteEntry()
         
 
