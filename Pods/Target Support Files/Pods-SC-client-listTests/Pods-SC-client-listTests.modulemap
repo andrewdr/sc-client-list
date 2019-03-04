@@ -1,0 +1,6 @@
+framework module Pods_SC_client_listTests {
+  umbrella header "Pods-SC-client-listTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

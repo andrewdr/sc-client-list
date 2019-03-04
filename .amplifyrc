@@ -1,0 +1,14 @@
+{
+    "providers": {
+        "awscloudformation": {
+            "AuthRoleName": "scclientlist-20190227132951-authRole",
+            "UnauthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190227132951-unauthRole",
+            "AuthRoleArn": "arn:aws:iam::248792958204:role/scclientlist-20190227132951-authRole",
+            "Region": "us-east-2",
+            "DeploymentBucketName": "scclientlist-20190227132951-deployment",
+            "UnauthRoleName": "scclientlist-20190227132951-unauthRole",
+            "StackName": "scclientlist-20190227132951",
+            "StackId": "arn:aws:cloudformation:us-east-2:248792958204:stack/scclientlist-20190227132951/0da714a0-3ac6-11e9-8fc7-0a7dfa8cb208"
+        }
+    }
+}

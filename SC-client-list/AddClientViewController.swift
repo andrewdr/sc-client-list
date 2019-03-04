@@ -7,29 +7,173 @@
 //
 
 import UIKit
+import AWSAppSync
 
 class AddClientViewController: UITableViewController {
 
+    @IBOutlet var addClientTable: UITableView!
+    
+    @IBOutlet weak var firstName: UITextField!
+    @IBOutlet weak var lastName: UITextField!
+    @IBOutlet weak var clientPhoto: UIImageView!
+    @IBOutlet weak var companyName: UITextField!
+    @IBOutlet weak var companyDesc: UITextField!
+    @IBOutlet weak var officePhone: UITextField!
+    @IBOutlet weak var cellPhone: UITextField!
+    @IBOutlet weak var email: UITextField!
+    @IBOutlet weak var websiteURL: UITextField!
+    
+    @IBOutlet var allTextFields: [UITextField]!
+    
+    
+
+    var appSyncClient: AWSAppSyncClient?
+
+    
+    
+    @IBAction func doneButton(_ sender: Any) {
+        
+        let allTexts = allTextFields.filter{ $0.text == ""}.count
+        
+        if allTexts == 0{
+            runMutation()
+            successAlert()
+            
+            firstName.text = ""
+            lastName.text = ""
+            companyName.text = ""
+            companyDesc.text = ""
+            officePhone.text = ""
+            cellPhone.text = ""
+            email.text = ""
+            websiteURL.text = ""
+            
+        }else{
+            fieldAlert()
+        }
+        
+        
+    }
+    
+
+    
+
+
+    
+
+
+    func runMutation(){
+        
+        let client  = Client(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, clientImage: "blank-avatar.png", companyName: companyName.text!, companyDesc: companyDesc.text!, officePhone: officePhone.text!, cellPhone: cellPhone.text!, email: email.text!, website: websiteURL.text!)
+        
+        let viewModel = ClientViewModel(client: client)
+        
+        
+        let mutationInput = CreateTodoInput(clientType: viewModel.clientType, firstName: viewModel.firstName, lastName: viewModel.lastName, companyName: viewModel.companyName, companyDesc: viewModel.companyDesc, officephone: viewModel.officePhone, cellPhone: viewModel.cellPhone, email: viewModel.email, website: viewModel.website)
+        appSyncClient?.perform(mutation: CreateTodoMutation(input: mutationInput)) { (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription )")
+            }
+            if let resultError = result?.errors {
+                print("Error saving the item on server: \(resultError)")
+                return
+            }
+        }
+    }
+    
+    func runQuery(){
+        appSyncClient?.fetch(query: ListTodosQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
+            if error != nil {
+                print(error?.localizedDescription ?? "")
+                return
+            }
+            
+            print(result?.data?.listTodos?.snapshot as Any)
+            
+//            result?.data?.listTodos?.items!.forEach{
+//
+//                print(($0?.firstName)! + " " + ($0?.lastName)!)
+//
+//                print($0?.id as Any, $0?.firstName as Any, $0?.lastName as Any)
+//
+//            }
+        }
+    }
+    
+    func deleteEntry(){
+        
+        let deleteInput = DeleteTodoInput(id: "a2c6525d-593b-44b2-a8cc-8961506f37f6")
+        
+        appSyncClient?.perform(mutation: DeleteTodoMutation(input: deleteInput)){ (result, error) in
+            if let error = error as? AWSAppSyncClientError {
+                print("Error occurred: \(error.localizedDescription)")
+            }
+            
+            if let resultError = result?.errors{
+                print("Error occurred: \(resultError)")
+                return
+            }
+            
+            print("DB Item with ID: \(deleteInput) was deleted.")
+            
+        }
+    }
+    
+    
+    
+//  MARK: - Alerts
+    
+    func fieldAlert(){
+        
+        let textFieldAlert = UIAlertController(title: "Form Incomplete", message: "Please fill in all information", preferredStyle: .alert)
+    
+        textFieldAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(textFieldAlert, animated: true)
+    }
+    
+    func successAlert(){
+        
+        let clientAdded = UIAlertController(title: "Success!", message: "Client Successfully Added", preferredStyle: .alert)
+        
+        clientAdded.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(clientAdded, animated: true)
+    }
+    
+    
+
+    
+//  MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        appSyncClient = appDelegate.appSyncClient
+        
+
+        
+        
+
+//        runQuery()
+//        deleteEntry()
+        
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 9
     }
 
     /*

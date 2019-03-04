@@ -1,0 +1,16 @@
+projects:
+  scList2:
+    schemaPath: graphql/schema.json
+    includes:
+      - graphql/**/*.graphql
+    excludes:
+      - amplify/**
+    extensions:
+      amplify:
+        codeGenTarget: swift
+        generatedFileName: API.swift
+        docsFilePath: graphql
+        graphQLApiId: stypprykwrfnla7yxpisvqmsym
+      endpoints:
+        prod: >-
+          https://tney7ueugbb2znnxhzunmv3nru.appsync-api.us-east-2.amazonaws.com/graphql

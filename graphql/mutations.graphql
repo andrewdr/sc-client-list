@@ -1,0 +1,43 @@
+# this is an auto generated file. This will be overwritten
+mutation CreateTodo($input: CreateTodoInput!) {
+  createTodo(input: $input) {
+    id
+    clientType
+    firstName
+    lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
+  }
+}
+mutation UpdateTodo($input: UpdateTodoInput!) {
+  updateTodo(input: $input) {
+    id
+    clientType
+    firstName
+    lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
+  }
+}
+mutation DeleteTodo($input: DeleteTodoInput!) {
+  deleteTodo(input: $input) {
+    id
+    clientType
+    firstName
+    lastName
+    companyName
+    companyDesc
+    officephone
+    cellPhone
+    email
+    website
+  }
+}
