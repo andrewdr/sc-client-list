@@ -37,10 +37,28 @@ class AddClientViewController: UITableViewController {
         
         if allTexts == 0{
             runMutation()
+            successAlert()
+            
+            firstName.text = ""
+            lastName.text = ""
+            companyName.text = ""
+            companyDesc.text = ""
+            officePhone.text = ""
+            cellPhone.text = ""
+            email.text = ""
+            websiteURL.text = ""
+            
         }else{
             fieldAlert()
         }
+        
+        
     }
+    
+
+    
+
+
     
 
 
@@ -103,15 +121,24 @@ class AddClientViewController: UITableViewController {
     
     
     
-//  MARK: - Alert
+//  MARK: - Alerts
     
     func fieldAlert(){
         
-    let textFieldAlert = UIAlertController(title: "Form Incomplete", message: "Please fill in all information", preferredStyle: .alert)
+        let textFieldAlert = UIAlertController(title: "Form Incomplete", message: "Please fill in all information", preferredStyle: .alert)
     
         textFieldAlert.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
         
         self.present(textFieldAlert, animated: true)
+    }
+    
+    func successAlert(){
+        
+        let clientAdded = UIAlertController(title: "Success!", message: "Client Successfully Added", preferredStyle: .alert)
+        
+        clientAdded.addAction(UIAlertAction(title: "Cancel", style: .default, handler: nil))
+        
+        self.present(clientAdded, animated: true)
     }
     
     
