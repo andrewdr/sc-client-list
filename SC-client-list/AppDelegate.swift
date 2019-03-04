@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         //You can choose your database location
-        let databaseURL = URL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent("Todo-lhjcfhgzdffxxhhie5vf3zhds4")
+        let databaseURL = URL(fileURLWithPath:NSTemporaryDirectory()).appendingPathComponent("Todo-stypprykwrfnla7yxpisvqmsym")
+        
         
         do {
             //AppSync configuration & client initialization
