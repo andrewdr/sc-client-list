@@ -18,16 +18,18 @@ class WebTableCell: UITableViewCell{
 }
 
 
+
 class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var webClientTable: UITableView!
     
-    var clients = [Client]()
+    var clients = Client()
     
+    var clientCount = 0
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
-        return clients.count
+        return clientCount
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -35,46 +37,50 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let webClientCell = tableView.dequeueReusableCell(withIdentifier: "webClientCell", for: indexPath)
             as! WebTableCell
         
-//        let client: Client
         
-        let client = clients[indexPath.row]
+//        let clientDeets = clientDetails[indexPath.row]
+        
+        let client = clients
+      
         let viewModel = ClientViewModel(client: client)
         
-        webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
-//        webClientCell.companyName.text = viewModel.companyName
-//        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
 
         
+        webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
+        webClientCell.companyName.text = viewModel.companyName
+//        webClientCell.clientImage.image = UIImage(named: viewModel.clientImage)
+        
+ 
+        
+
         return webClientCell
         
     }
     
     var appSyncClient: AWSAppSyncClient?
     
+    
     func runQuery(){
+        
         appSyncClient?.fetch(query: ListTodosQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
+        
             if error != nil {
                 print(error?.localizedDescription ?? "")
                 return
             }
-//            else if let results = result{
-//
-//            }
             
-        
-            var dataArray = [String]()
+            self.clientCount = (result?.data?.listTodos!.items!.count)!
             
-            result?.data?.listTodos?.items?.forEach {
-                
-                
-                dataArray.append(($0?.firstName)!)
-                dataArray.append(($0?.lastName)!)
-                
-//                print(dataArray)
-
-//                print(($0?.firstName)! + " " + ($0?.lastName)!)
-
+            result?.data?.listTodos?.items!.forEach{
+                self.clients = Client(clientType: $0?.clientType, firstName: $0?.firstName, lastName: $0?.lastName, companyName: $0?.companyName, companyDesc: $0?.companyDesc, officePhone: $0?.officephone, cellPhone: $0?.cellPhone, email: $0?.email, website: $0?.website)
             }
+                
+        
+            
+
+            
+
+            self.webClientTable.reloadData()
         }
     }
     
@@ -85,7 +91,9 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
         
-//        runQuery()
+        runQuery()
+        
+
 
     }
     

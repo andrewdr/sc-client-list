@@ -10,10 +10,10 @@ import Foundation
 
 struct ClientViewModel{
     
+
     let clientType: String
     let firstName: String
     let lastName: String
-    let clientImage: String
     
     let companyName: String
     let companyDesc: String
@@ -28,7 +28,6 @@ struct ClientViewModel{
         clientType = client.clientType ?? "_"
         firstName = client.firstName ?? "Andy"
         lastName = client.lastName ?? "Draper"
-        clientImage = client.clientImage ?? "blank-avatar.png"
         companyName = client.companyName ?? "ABC Company"
         companyDesc = client.companyDesc ?? "We Do Some Shit"
         

@@ -54,17 +54,10 @@ class AddClientViewController: UITableViewController {
         
         
     }
-    
-
-    
-
-
-    
-
 
     func runMutation(){
         
-        let client  = Client(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, clientImage: "blank-avatar.png", companyName: companyName.text!, companyDesc: companyDesc.text!, officePhone: officePhone.text!, cellPhone: cellPhone.text!, email: email.text!, website: websiteURL.text!)
+        let client  = Client(clientType: "Web", firstName: firstName.text!, lastName: lastName.text!, companyName: companyName.text!, companyDesc: companyDesc.text!, officePhone: officePhone.text!, cellPhone: cellPhone.text!, email: email.text!, website: websiteURL.text!)
         
         let viewModel = ClientViewModel(client: client)
         
@@ -78,25 +71,6 @@ class AddClientViewController: UITableViewController {
                 print("Error saving the item on server: \(resultError)")
                 return
             }
-        }
-    }
-    
-    func runQuery(){
-        appSyncClient?.fetch(query: ListTodosQuery(), cachePolicy: .returnCacheDataAndFetch) {(result, error) in
-            if error != nil {
-                print(error?.localizedDescription ?? "")
-                return
-            }
-            
-            print(result?.data?.listTodos?.snapshot as Any)
-            
-//            result?.data?.listTodos?.items!.forEach{
-//
-//                print(($0?.firstName)! + " " + ($0?.lastName)!)
-//
-//                print($0?.id as Any, $0?.firstName as Any, $0?.lastName as Any)
-//
-//            }
         }
     }
     
@@ -150,12 +124,7 @@ class AddClientViewController: UITableViewController {
         
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         appSyncClient = appDelegate.appSyncClient
-        
-
-        
-        
-
-//        runQuery()
+    
 //        deleteEntry()
         
 
