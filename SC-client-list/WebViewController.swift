@@ -23,7 +23,7 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
     
     @IBOutlet weak var webClientTable: UITableView!
     
-    var clients = Client()
+    var clients = [Client]()
     
     var clientCount = 0
     
@@ -40,11 +40,11 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
         
 //        let clientDeets = clientDetails[indexPath.row]
         
-        let client = clients
+        let client: Client
+        
+        client = clients[indexPath.row]
       
         let viewModel = ClientViewModel(client: client)
-        
-
         
         webClientCell.clientName.text = viewModel.firstName + " " + viewModel.lastName
         webClientCell.companyName.text = viewModel.companyName
@@ -71,8 +71,12 @@ class WebViewController: UIViewController, UITableViewDelegate, UITableViewDataS
             
             self.clientCount = (result?.data?.listTodos!.items!.count)!
             
-            result?.data?.listTodos?.items!.forEach{
-                self.clients = Client(clientType: $0?.clientType, firstName: $0?.firstName, lastName: $0?.lastName, companyName: $0?.companyName, companyDesc: $0?.companyDesc, officePhone: $0?.officephone, cellPhone: $0?.cellPhone, email: $0?.email, website: $0?.website)
+            result?.data?.listTodos?.items!.forEach{_ in
+                
+                let clientArray = result?.data?.listTodos?.items
+                
+                self.clients = (clientArray?.compactMap{Client(clientType: $0?.clientType, firstName: $0?.firstName, lastName: $0?.lastName, companyName: $0?.companyName, companyDesc: $0?.companyDesc, officePhone: $0?.officephone, cellPhone: $0?.cellPhone, email: $0?.email, website: $0?.website)})!
+                
             }
                 
         
